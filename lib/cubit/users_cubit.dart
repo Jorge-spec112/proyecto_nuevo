@@ -1,23 +1,52 @@
-import 'package:flutter_application_1/cubit/modelo.dart';
+import 'dart:convert';
+import 'package:flutter_application_1/modelo/modelo.dart';
 import 'package:flutter_application_1/cubit/users_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:http/http.dart' as http;
 
 class UserCubit extends Cubit<UserState> {
   UserCubit() : super(UserInitial());
 
   final List<User> _users = [];
 
+  // 👉 Método para agregar usuarios manualmente
   Future<void> addUser(String name, String email) async {
-    // 🔥 Estado de carga
     emit(UserLoading());
 
-    // ⏳ Simula llamada a la API
     await Future.delayed(const Duration(seconds: 1));
 
-    // ✅ Agrega usuario
     _users.add(User(name, email));
 
-    // 🔄 Devuelve lista actualizada
     emit(UserLoaded(List<User>.from(_users)));
+  }
+
+  // 👉 Método para traer usuarios desde API
+  Future<void> fetchUsers() async {
+    emit(UserLoading());
+
+    try {
+      final url = Uri.parse(
+        'https://mocki.io/v1/3f3d4b6b-8768-40ef-bff0-8d2eadd77637',
+      );
+
+      final response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+
+        final users = (data as List)
+            .map((json) => User.fromJson(json))
+            .toList();
+
+        // 🚀 Combina usuarios de API + los locales
+        _users.addAll(users as Iterable<User>);
+
+        emit(UserLoaded(List<User>.from(_users)));
+      } else {
+        emit(UserError("Error HTTP: ${response.statusCode}"));
+      }
+    } catch (e) {
+      emit(UserError("Excepción: $e"));
+    }
   }
 }

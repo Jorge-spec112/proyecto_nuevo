@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/bloc/form_bloc.dart';
-import 'package:flutter_application_1/bloc/form_screen.dart';
+import 'package:flutter_application_1/vistas/form_screen.dart';
 import 'package:flutter_application_1/cubit/users_cubit.dart';
-import 'package:flutter_application_1/cubit/users_screen.dart';
+import 'package:flutter_application_1/vistas/users_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
