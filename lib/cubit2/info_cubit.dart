@@ -16,7 +16,7 @@ class InfoCubit extends Cubit<InfoState> {
 
       final response = await http.get(
         Uri.parse(
-          "https://mocki.io/v1/58998084-4424-4195-83f6-6e8e0c157ec5",
+          "https://mocki.io/v1/1beec591-b450-43cf-98ec-5643e0229573",
         ), // tu URL de mocki aquí
       );
 
