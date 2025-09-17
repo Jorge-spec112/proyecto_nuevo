@@ -11,9 +11,13 @@ class InfoCubit extends Cubit<InfoState> {
     emit(InfoLoading());
 
     try {
-      // 👉 Aquí usas tu backend o mockapi
+      // ⏳ Simula un delay de 3 segundos
+      await Future.delayed(const Duration(seconds: 3));
+
       final response = await http.get(
-        Uri.parse("https://mocki.io/v1/f61d06e0-d4ba-40ce-bf2f-41557c047a31"),
+        Uri.parse(
+          "https://mocki.io/v1/58998084-4424-4195-83f6-6e8e0c157ec5",
+        ), // tu URL de mocki aquí
       );
 
       if (response.statusCode == 200) {

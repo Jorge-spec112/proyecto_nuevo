@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/cubit/cubit2/info_cubit.dart';
+import 'package:flutter_application_1/cubit2/info_cubit.dart';
 import 'package:flutter_application_1/vistas/info_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../cubit/users_cubit.dart';
