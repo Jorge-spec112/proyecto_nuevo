@@ -1,4 +1,4 @@
-import '../modelo/modelo.dart';
+import '../../modelo/modelo.dart';
 
 abstract class UserState {}
 

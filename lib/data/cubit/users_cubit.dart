@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter_application_1/modelo/modelo.dart';
-import 'package:flutter_application_1/cubit/users_state.dart';
+import 'package:flutter_application_1/data/cubit/users_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 
@@ -26,7 +26,7 @@ class UserCubit extends Cubit<UserState> {
 
     try {
       final url = Uri.parse(
-        'https://mocki.io/v1/3f3d4b6b-8768-40ef-bff0-8d2eadd77637',
+        'https://mocki.io/v1/3eb07405-30da-49e9-bc8b-a3a12292e235',
       );
 
       final response = await http.get(url);

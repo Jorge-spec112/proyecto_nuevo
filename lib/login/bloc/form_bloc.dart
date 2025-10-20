@@ -18,7 +18,7 @@ class FormBloc extends Bloc<FormEvent, FormState> {
       try {
         // 👇 URL de tu JSON (puede ser GitHub o Mocky)
         final url = Uri.parse(
-          'https://mocki.io/v1/9c468dff-7878-4fe7-98b4-3fcb7ebdf8f7',
+          'https://mocki.io/v1/3eb07405-30da-49e9-bc8b-a3a12292e235',
         );
 
         final response = await http.get(url);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart' hide FormState;
-import 'package:flutter_application_1/bloc/form_bloc.dart' show FormBloc;
-import 'package:flutter_application_1/bloc/form_event.dart';
-import 'package:flutter_application_1/bloc/form_state.dart' show FormState;
-import 'package:flutter_application_1/cubit/users_cubit.dart';
+import 'package:flutter_application_1/login/bloc/form_bloc.dart' show FormBloc;
+import 'package:flutter_application_1/login/bloc/form_event.dart';
+import 'package:flutter_application_1/login/bloc/form_state.dart' show FormState;
+import 'package:flutter_application_1/data/cubit/users_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FormScreen extends StatefulWidget {
